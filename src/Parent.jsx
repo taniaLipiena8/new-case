@@ -15,22 +15,12 @@ const Parent = () => {
     const onSecondNumChanged = e => setSecondNum(e.target.value)
 
     useEffect(() => {
-        let test = 0
-        if (firstNum && secondNum) {
-            test = Number(firstNum) + Number(secondNum)
-        } else if (firstNum && !(secondNum)) {
-            test = Number(firstNum)
-        } else {
-            test = Number(secondNum)
-        }
-
-        onValueChange(test)
-    })
+        let test = Number(firstNum) + Number(secondNum)
+        setText(test)
+    },[firstNum,secondNum])
 
     return (
         <div className='main'>
-            {/* <FirstTF handleFirstNumChange={onFirstNumChanged} />
-            <SecondTF handleSecondNumChange={onSecondNumChanged} /> */}
             <Textfield label='First' value={firstNum} handlechange={onFirstNumChanged} />
             <Textfield label='Second' value={secondNum} handlechange={onSecondNumChanged} />
             <ViewText text={text} />

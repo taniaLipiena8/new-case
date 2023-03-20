@@ -1,21 +1,13 @@
 import React, { useEffect } from 'react'
 
-const ViewText = ({ text, secondNum, firstNum, onButtonPressed }) => {
+const ViewText = ({ text}) => {
 
-    let test = 0
-    if (firstNum && secondNum) {
-        test = Number(firstNum) + Number(secondNum)
-    } else if (firstNum && !(secondNum)) {
-        test = Number(firstNum)
-    } else {
-        test = Number(secondNum)
-    }
-
+    
 
     return (
 
         <div>
-            {test}
+            {text}
             {/* <button onClick={()=>onButtonPressed(test)}>test</button> */}
         </div>
     )
